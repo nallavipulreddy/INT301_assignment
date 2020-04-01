@@ -4,4 +4,4 @@ $username = "";
 $email = "";
 $errors = [];
 
-$conn = new mysqli('localhost', 'root', '', 'test1');
+$conn = new mysqli('localhost', 'root', '', 'int301');

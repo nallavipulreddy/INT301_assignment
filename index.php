@@ -5,8 +5,6 @@
 <!.......................................................................................................>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/footer.css">
-      <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
  
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
@@ -29,11 +27,12 @@ function myFunction() {
 <body>
 <div class="bgimg-1">
     <div class="topnav">
-        <a" href="# class ="navbar-brand" style="color:orange" > Reg_no:11615324 | Name: Nalla Vipul reddy | roll no:68 </a>
+        <a" href="# class ="navbar-brand" style="color:orange" > Reg no:11615324 | Name: Nalla Vipul reddy | roll no:68 </a>
     </div>
     <div class="topnav">
         <table width="100%">
             <tr>
+                <td>
                 <a href="login.php">SIGN IN</a>
                 </td>
                 <td>
@@ -43,13 +42,11 @@ function myFunction() {
         </table>
     </div>
     <div class="caption">
-      <span class="border">"Capstone Project"</span>
+      <span class="border">"Create a login and signup page as below.Save the entries in database .When you are done with signup ,it should be directed to login up "</span>
     </div>
     <div>
         
     </div>
 </div>
-
-  <?php include_once('footer.php');?>
 </body>
 </html>
