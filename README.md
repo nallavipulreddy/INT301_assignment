@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## Problem Statement
 
-You can use the [editor on GitHub](https://github.com/nallavipulreddy/INT301_assignment/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Create a login and signup page as below.Save the entries in database .When you are done with signup ,it should be directed to login up 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Description
 
-### Markdown
+Login and Signup page Created using the concepts of Php, Mysql
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+user need to Signup first using an email id(email id should not been use before).
+and along with the email id the user need to been also enter a username(minimum 5 characters).
+and a password(atleast 1 uppercase, 1 special character, 1 lowercase, 1 number).
+all the data is stored in the database using phpmyadmin and Mysql.
 
-```markdown
-Syntax highlighted code block
+Login
 
-# Header 1
-## Header 2
-### Header 3
+user need to enter the email address or username to login 
 
-- Bulleted
-- List
+once user is logged in he/she are redirected to the main page and there he can logout the session from the 
+account dropdown menu.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nallavipulreddy/INT301_assignment/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Hosted on:https://int301.000webhostapp.com/index.php
