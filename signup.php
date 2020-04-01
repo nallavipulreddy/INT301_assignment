@@ -30,7 +30,6 @@ if (isset($_POST['submit'])) {
         $stmt = $conn->prepare($query);
         $stmt->bind_param('sss', $username, $email, $password);
         $result = $stmt->execute();
-
         if ($result) 
         {
             $user_id = $stmt->insert_id;
@@ -67,100 +66,100 @@ if (isset($_POST['submit'])) {
 
 
 <style type="text/css">
-	body{
-		color: #fff;
-		background-image: url("https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-		position: relative;
-    	background-attachment: fixed;
-    	background-position: center;
-    	background-repeat: no-repeat;
-		background-size: cover;
-		min-height: 100%;
-		
-		font-family: 'Roboto', sans-serif;
-	}
+    body{
+        color: #fff;
+        background-image: url("https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100%;
+        
+        font-family: 'Roboto', sans-serif;
+    }
     .form-control{
-		height: 40px;
-		box-shadow: none;
-		color: #969fa4;
-	}
-	.form-control:focus{
-		border-color: #5cb85c;
-	}
+        height: 40px;
+        box-shadow: none;
+        color: #969fa4;
+    }
+    .form-control:focus{
+        border-color: #5cb85c;
+    }
     .form-control, .btn{        
         border-radius: 3px;
     }
-	.signup-form{
-		width: 400px;
-		margin: 0 auto;
-		padding: 30px 0;
-	}
-	.signup-form h2{
-		color: #636363;
-        margin: 0 0 15px;
-		position: relative;
-		text-align: center;
+    .signup-form{
+        width: 400px;
+        margin: 0 auto;
+        padding: 30px 0;
     }
-	.signup-form h2:before, .signup-form h2:after{
-		content: "";
-		height: 2px;
-		width: 30%;
-		background: #d4d4d4;
-		position: absolute;
-		top: 50%;
-		z-index: 2;
-	}	
-	.signup-form h2:before{
-		left: 0;
-	}
-	.signup-form h2:after{
-		right: 0;
-	}
+    .signup-form h2{
+        color: #636363;
+        margin: 0 0 15px;
+        position: relative;
+        text-align: center;
+    }
+    .signup-form h2:before, .signup-form h2:after{
+        content: "";
+        height: 2px;
+        width: 30%;
+        background: #d4d4d4;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+    }   
+    .signup-form h2:before{
+        left: 0;
+    }
+    .signup-form h2:after{
+        right: 0;
+    }
     .signup-form .hint-text{
-		color: #999;
-		margin-bottom: 30px;
-		text-align: center;
-	}
+        color: #999;
+        margin-bottom: 30px;
+        text-align: center;
+    }
     .signup-form form{
-		color: #999;
-		border-radius: 3px;
-    	margin-bottom: 15px;
+        color: #999;
+        border-radius: 3px;
+        margin-bottom: 15px;
         background: beige;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         padding: 30px;
     }
-	.signup-form .form-group{
-		margin-bottom: 20px;
-	}
-	.signup-form input[type="checkbox"]{
-		margin-top: 3px;
-	}
-	.signup-form .btn{        
+    .signup-form .form-group{
+        margin-bottom: 20px;
+    }
+    .signup-form input[type="checkbox"]{
+        margin-top: 3px;
+    }
+    .signup-form .btn{        
         font-size: 16px;
-        font-weight: bold;		
-		min-width: 140px;
+        font-weight: bold;      
+        min-width: 140px;
         outline: none !important;
     }
-	.signup-form .row div:first-child{
-		padding-right: 10px;
-	}
-	.signup-form .row div:last-child{
-		padding-left: 10px;
-	}    	
+    .signup-form .row div:first-child{
+        padding-right: 10px;
+    }
+    .signup-form .row div:last-child{
+        padding-left: 10px;
+    }       
     .signup-form a{
-		color: #fff;
-		text-decoration: underline;
-	}
+        color: #fff;
+        text-decoration: underline;
+    }
     .signup-form a:hover{
-		text-decoration: none;
-	}
-	.signup-form form a{
-		color: #5cb85c;
-		text-decoration: none;
-	}	
-	.signup-form form a:hover{
-		text-decoration: underline;
-	}  
+        text-decoration: none;
+    }
+    .signup-form form a{
+        color: #5cb85c;
+        text-decoration: none;
+    }   
+    .signup-form form a:hover{
+        text-decoration: underline;
+    }  
 </style>
 </head>
 <body>
@@ -176,8 +175,8 @@ if (isset($_POST['submit'])) {
     </div>
 <div class="signup-form">
     <form action="" method="post">
-		<h2>Sign Up</h2>
-		<p class="hint-text">Create your account Today. It takes only  a minute.</p>
+        <h2>Sign Up</h2>
+        <p class="hint-text">Create your account Today. It takes only  a minute.</p>
 <?php if (count($errors) > 0): ?>
   <div class="alert alert-danger">
     <?php foreach ($errors as $error): ?>
@@ -188,23 +187,23 @@ if (isset($_POST['submit'])) {
   </div>
 <?php endif;?>
         <div class="form-group">
-			<input type="text" class="form-control" name="username" placeholder="UserName" required="required" onBlur="checkUsernameAvailability()"  pattern="[a-zA-Z\s]+">
-			<span id="username-availability-status" style="font-size:12px;"></span>        	
+            <input type="text" class="form-control" name="username" placeholder="UserName" required="required" onBlur="checkUsernameAvailability()"  pattern="[a-zA-Z\s]+">
+            <span id="username-availability-status" style="font-size:12px;"></span>         
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         </div>
-		<div class="form-group">
+        <div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Password" required="required"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
         </div>
-		<div class="form-group">
+        <div class="form-group">
             <input type="password" class="form-control" name="passwordConf" placeholder="Confirm Password" required="required">
         </div>        
-		<div class="form-group">
+        <div class="form-group">
             <button type="submit" name="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
         </div>
     <div class="text-center">Already have an account? <a href="login.php">Login</a></div>
-	</form>
+    </form>
 </div>
 
 </body>

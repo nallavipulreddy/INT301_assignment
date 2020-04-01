@@ -21,6 +21,16 @@ $display=$_SESSION['username'];
   padding: 100px 20px;
   height: 409px;
 }
+.bgimg-1{
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    min-height: 100%;
+  
+  }
 </style>
 <script>
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
