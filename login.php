@@ -17,25 +17,18 @@ if (isset($_POST['login'])) {
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             $user = $result->fetch_assoc();
-            if (password_verify($password, $user['password'])) { // if password matches
+            if (password_verify($password, $user['password'])) 
+            { // if password matches
                 $stmt->close();
-                    if($user['verified']===0)
-                    {
-                        $errors['login_fail']="Verify  your Email Id by clicking  the link In your mailbox";
-                    }
-                    else {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['email'] = $user['email'];
-                    $_SESSION['verified'] = $user['verified'];
-                    $_SESSION['channel_id']=$user['channel_id'];
                     $_SESSION['auth_key']=$user['auth_key'];
                     $_SESSION['message'] = 'You are logged in!';
                     $_SESSION['type'] = 'alert-success';
                     header("location: main.php");
                     exit(0);
-                    }
-                
+                    
             } 
             else 
             { // if password does not match
@@ -76,7 +69,7 @@ if (isset($_POST['login'])) {
 <style type="text/css">
 	body{
 		color: #fff;
-		background-image: url("images/2.jpg");
+		background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
 		position: relative;
     	background-attachment: fixed;
     	background-position: center;

@@ -62,17 +62,11 @@ document.getElementById("defaultOpen").click();
         <table width="100%">
             <tr>
                 <td>
-                <a href="kc.php">Knowledge-Center</a>
-                </td><td>
-                <a href="soilmoisture.php">Soil moisture</a>
-                </td><td>
-                <a href="temperature.php">Temperature</a>
                 </td>
                 <td class="dropdown">
                 <a class="dropbtn">Account</a>
                     <div class="dropdown-content">
-                        <a href="profile.php"><?php echo $display;?></a>
-                        <a href="#">Help</a>
+                        <a href="#"><?php echo $display;?></a>
                         <a href="logout.php">Logout</a>
                     </div>
                 </td>
@@ -84,7 +78,7 @@ document.getElementById("defaultOpen").click();
       <span class="border">"Welcome <?php echo $display;?>"</span>
       <br>
       <br>
-      <span class="border">"You Are smart to choose smartty-farm"</span>
+      <span class="border">"Assignment Done"</span>
     </div>
 </div>
 

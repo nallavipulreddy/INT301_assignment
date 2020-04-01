@@ -18,8 +18,6 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $token = bin2hex(random_bytes(50)); // generate unique token
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); //encrypt password
-    $channel_id=0;
-    $auth_key=0;
 
     // Check if email already exists
     $sql = "SELECT * FROM users WHERE email='$email' LIMIT 1";
@@ -28,41 +26,22 @@ if (isset($_POST['submit'])) {
         $errors['email'] = "Email already exists";
     }
     if (count($errors) === 0) {
-       $query = "INSERT INTO users SET username=?, email=?, token=?, password=?,channel_id=?,
-    auth_key=?;";
+       $query = "INSERT INTO users SET username=?, email=?, password=?;";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('ssssss', $username, $email, $token, $password,$channel_id,
-    $auth_key);
+        $stmt->bind_param('ssss', $username, $email, $password);
         $result = $stmt->execute();
 
-        if ($result) {
+        if ($result) 
+        {
             $user_id = $stmt->insert_id;
             $stmt->close();
-
-            // TO DO: send verification email to user
-            // sendVerificationEmail($email, $token);
-
-            $to=$email;
-            $msg= "Thanks for new Registration.";   
-            $subject="Email verification (smarttyfarm.com)";
-            $head .= "MIME-Version: 1.0"."\r\n";
-            $head .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-            $head .= 'From:Smarttyfarm | admin <vipulreddy00@gmail.com>'."\r\n";
-                
-            $ms.="<html></body><div><div>Dear $username,</div></br></br>";
-            $ms.="<div style='padding-top:8px;'>Please click The following link For verifying and activation of your account</div>
-            <div style='padding-top:10px;'><a href='https://smarttyfarm.000webhostapp.com/email_Verification.php?code=$token'>Click Here</a></div>
-            <div style='padding-top:4px;'>Powered by <a href='https://smarttyfarm.000webhostapp.com'>smarttyfarm</a></div></div>
-            </body></html>";
-            mail($to,$subject,$ms,$head);
-
 
             $_SESSION['id'] = $user_id;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
-            $_SESSION['verified'] = false;
             header("location: login.php");
-        } else {
+        } 
+        else {
             $_SESSION['error_msg'] = "Database error: Could not register user";
         }
 
@@ -90,7 +69,7 @@ if (isset($_POST['submit'])) {
 <style type="text/css">
 	body{
 		color: #fff;
-		background-image: url("images/3.jpg");
+		background-image: url("https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
 		position: relative;
     	background-attachment: fixed;
     	background-position: center;
@@ -191,8 +170,7 @@ if (isset($_POST['submit'])) {
             <tr>
                 <td>
                 <a href="index.php"style="text-decoration: none">Home</a>
-                </td>
-                
+                </td>    
             </tr>
         </table>
     </div>
