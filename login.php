@@ -23,7 +23,6 @@ if (isset($_POST['login'])) {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['email'] = $user['email'];
-                    $_SESSION['auth_key']=$user['auth_key'];
                     $_SESSION['message'] = 'You are logged in!';
                     $_SESSION['type'] = 'alert-success';
                     header("location: main.php");
@@ -201,7 +200,7 @@ if (isset($_POST['login'])) {
     </form>
 	
 <div class="modal-footer">
-				<a href="forgot-password.php">Forgot Password?</a>
+				<a onclick="alert("Sorry Cannot Help");">Forgot Password?</a>
 			</div>
 			<div class="text-center">New User? <a href="signup.php">Sign Up</a></div>
 </div>

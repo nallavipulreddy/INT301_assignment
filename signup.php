@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     if (count($errors) === 0) {
        $query = "INSERT INTO users SET username=?, email=?, password=?;";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('ssss', $username, $email, $password);
+        $stmt->bind_param('sss', $username, $email, $password);
         $result = $stmt->execute();
 
         if ($result) 
