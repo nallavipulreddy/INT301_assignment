@@ -1,7 +1,7 @@
 <?php include 'dbh.php';
 if (isset($_POST['login'])) {
     if (empty($_POST['username'])) {
-        $errors['username'] = 'Username or email required';
+        $errors['username'] = 'Username required';
     }
     if (empty($_POST['password'])) {
         $errors['password'] = 'Password required';
